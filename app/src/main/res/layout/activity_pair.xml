@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/background"
+    android:layout_height="match_parent"
+    tools:context=".PairActivity">
+
+    <ImageView
+        android:id="@+id/jigsaw"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        app:layout_constraintVertical_bias="0.047"
+        app:srcCompat="@drawable/jigsaw" />
+
+    <TextView
+        android:id="@+id/requestTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:textColor="@color/brown"
+        android:visibility="gone"
+        android:textStyle="bold"
+        android:fontFamily="@font/raleway_medium"
+        android:text="Request sent please wait..."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jigsaw"
+        app:layout_constraintVertical_bias="0.197" />
+
+    <Button
+        android:id="@+id/request_button"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:background="@drawable/black_button"
+        android:fontFamily="@font/raleway_semibold"
+        android:text="send request"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jigsaw"
+        app:layout_constraintVertical_bias="0.317" />
+
+    <ProgressBar
+        android:id="@+id/buffer"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:theme="@style/ProgressBarStyle"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/jigsaw"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/jigsaw" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/raleway_medium"
+        android:text="Name"
+        android:textColor="@color/maroon"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:layout_constraintVertical_bias="0.019" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pair with"
+        android:textSize="30sp"
+        android:textColor="@color/brown"
+        android:textStyle="bold"
+        android:fontFamily="@font/raleway_medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.056" />
+
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00"
+        android:textColor="@color/yellow"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/raleway_semibold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/request_button"
+        app:layout_constraintVertical_bias="0.216" />
+</androidx.constraintlayout.widget.ConstraintLayout>

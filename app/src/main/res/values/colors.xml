@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="button">#A5947A</color>
+    <color name="white">#fff</color>
+    <color name="black">#000</color>
+    <color name="gray">#494B4B</color>
+    <color name="brown">#6C240E</color>
+    <color name="yellow">#E99415</color>
+    <color name="orange">#FF5722</color>
+    <color name="cream">#CDACA2</color>
+    <color name="maroon">#880808</color>
+    <color name="green">#33AC37</color>
+</resources>

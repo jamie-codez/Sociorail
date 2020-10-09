@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "809102280479",
+    "firebase_url": "https://sociorails.firebaseio.com",
+    "project_id": "sociorails",
+    "storage_bucket": "sociorails.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:809102280479:android:03f2caca16db2b3948522a",
+        "android_client_info": {
+          "package_name": "com.voomantics.sociorail"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "809102280479-62v9f15gtm8ccuri5bkp0r42s2udh66p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNMjBbg7_UsssRdoNyWDqkHdg7y7A67yk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "809102280479-62v9f15gtm8ccuri5bkp0r42s2udh66p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

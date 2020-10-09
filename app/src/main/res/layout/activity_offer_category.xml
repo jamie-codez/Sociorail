@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".OfferCategoryActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="20sp"
+        android:paddingBottom="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:id="@+id/food"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginStart="50sp"
+            android:layout_marginEnd="50sp"
+            android:background="@drawable/cream_rad"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="1dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/food_offer" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:fontFamily="cursive"
+                android:text="Food offers"
+                android:textAlignment="center"
+                android:textFontWeight="500000"
+                android:textSize="25sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="182dp"
+            android:id="@+id/alcohol"
+            android:layout_marginStart="50sp"
+            android:layout_marginTop="30sp"
+            android:layout_marginEnd="50sp"
+            android:background="@drawable/cream_rad"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="1dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/plus18_offer" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:fontFamily="cursive"
+                android:text="18+ offers"
+                android:textAlignment="center"
+                android:textFontWeight="500000"
+                android:textSize="25sp" />
+        </FrameLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:backgroundTint="#80BF945B"
+    android:backgroundTintMode="src_over"
+    android:scrollbars="vertical"
+    tools:context=".UsersActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/user_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="500sp"
+                android:layout_gravity="center"
+                tools:listitem="@layout/user_row_item" />
+
+            <TextView
+                android:id="@+id/no_users"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="No users available..."
+                android:textColor="@color/brown"
+                android:textSize="25sp"
+                android:visibility="gone" />
+
+            <ProgressBar
+                android:id="@+id/UsersProgressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:scaleX="2.5"
+                android:scaleY="2.5"
+                android:theme="@style/ProgressBarStyle"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/join_list_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Join List"
+            android:fontFamily="@font/raleway_semibold"
+            android:textAlignment="center"
+            android:textColor="@color/brown"
+            android:textSize="20sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginBottom="20sp"
+            android:layout_height="70dp">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/remove_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:background="@color/yellow"
+                android:clickable="true"
+                android:focusable="true"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/remove" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/add_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@color/yellow"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.473"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/add" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

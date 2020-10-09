@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:background="#918A8A">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/requestImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/account" />
+
+    <androidx.emoji.widget.EmojiTextView
+        android:id="@+id/requestName"
+        android:layout_width="210dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/requestImage"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:fontFamily="@font/raleway_bold"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="4dp"
+        android:layout_toEndOf="@+id/requestImage"
+        android:background="@drawable/edit_text_white"
+        android:paddingTop="7dp"
+        android:text="Name"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/acceptBtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@+id/requestName"
+        android:background="@drawable/accept_button_request"
+        android:scaleType="centerInside"
+        android:src="@drawable/checkx"
+        android:text="" />
+
+    <ImageView
+        android:id="@+id/rejectBtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/reject_button_request"
+        android:scaleType="centerInside"
+        android:src="@drawable/clear"
+        android:text="" />
+
+
+</RelativeLayout>
