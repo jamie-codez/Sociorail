@@ -23,6 +23,9 @@ import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.squareup.picasso.Picasso;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+
 import static com.voomantics.sociorail.Constants.LOCATION_DATA_EXTRA;
 import static com.voomantics.sociorail.Constants.LOCATION_REQUEST_CODE;
 import static com.voomantics.sociorail.Constants.RECEIVER;
@@ -50,15 +53,19 @@ public class DetailActivity extends AppCompatActivity {
         getData();
         getLocation();
         enter.setOnClickListener(view -> {
-            Lat = String.valueOf(latitude);
-            Long = String.valueOf(longitude);
-            if (offer.getLatitude().equals(Lat) && offer.getLongitude().equals(Long)) {
-                Intent intent = new Intent(DetailActivity.this, UsersActivity.class);
-                startActivity(intent);
-            }else {
-                error.setVisibility(View.VISIBLE);
-                enter.setActivated(false);
-            }
+            DecimalFormat round = new DecimalFormat("#.####");
+            round.setRoundingMode(RoundingMode.CEILING);
+            Lat = round.format(latitude);
+            Long = round.format(longitude);
+            Intent intent = new Intent(DetailActivity.this, UsersActivity.class);
+            startActivity(intent);
+//            if (offer.getLatitude().equals(Lat) && offer.getLongitude().equals(Long)) {
+//                Intent intent = new Intent(DetailActivity.this, UsersActivity.class);
+//                startActivity(intent);
+//            }else {
+//                error.setVisibility(View.VISIBLE);
+//                enter.setActivated(false);
+//            }
         });
     }
 

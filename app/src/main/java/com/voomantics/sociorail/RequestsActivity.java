@@ -89,11 +89,19 @@ public class RequestsActivity extends AppCompatActivity implements SearchView.On
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.users_menu, menu);
+        getMenuInflater().inflate(R.menu.request_menu, menu);
         MenuItem item = menu.findItem(R.id.search_users);
         SearchView searchView = (SearchView) MenuItemCompat.getActionView(item);
         searchView.setOnQueryTextListener(this);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.account) {
+            startActivity(new Intent(this, AccountActivity.class));
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

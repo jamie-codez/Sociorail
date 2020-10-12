@@ -9,17 +9,20 @@
     <application
         android:allowBackup="false"
         android:fullBackupOnly="false"
-        android:largeHeap="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/play_store_icon_foreground"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/play_store_icon_round"
         android:supportsRtl="true"
         android:theme="@style/NoActionBar">
+        <activity android:name=".AccountActivity"></activity>
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-8571460955599757~3876719616" />
-        <service android:name="FetchAddressIntentService" />
+
+        <service android:name=".FetchAddressIntentService" />
 
         <activity android:name=".RedeemTokenActivity" />
         <activity android:name=".PairOption" />
