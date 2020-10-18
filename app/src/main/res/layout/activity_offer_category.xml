@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:fontFamily="cursive"
-                android:text="Food offers"
+                android:text="@string/food_offers"
                 android:textAlignment="center"
                 android:textFontWeight="500000"
                 android:textSize="25sp" />
@@ -66,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:fontFamily="cursive"
-                android:text="18+ offers"
+                android:text="@string/_18_offers"
                 android:textAlignment="center"
                 android:textFontWeight="500000"
                 android:textSize="25sp" />

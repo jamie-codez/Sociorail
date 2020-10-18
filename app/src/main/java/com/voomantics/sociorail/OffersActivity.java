@@ -176,6 +176,10 @@ public class OffersActivity extends AppCompatActivity implements SearchView.OnQu
         switch (item.getItemId()) {
             case R.id.logout:
                 FirebaseAuth.getInstance().signOut();
+                break;
+            case R.id.account:
+                startActivity(new Intent(this,AccountActivity.class));
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -198,32 +202,17 @@ public class OffersActivity extends AppCompatActivity implements SearchView.OnQu
     }
 
     public void searchList(String s) {
-        Query query = FirebaseDatabase.getInstance().getReference("customer_list").orderByChild("search").startAt(s.toLowerCase()).endAt(s + "\uf8ff");
-        query.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                offerList.clear();
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    Offer offer = dataSnapshot.getValue(Offer.class);
-                    offerList.add(offer);
-                }
-
-                offerAdapter = new OfferAdapter( OffersActivity.this,offerList, null);
-                offerRecyclerView.setAdapter(offerAdapter);
-                offerAdapter.setOnItemClickListener(position -> {
-                    Offer offer = offerList.get(position);
-                        Intent intent = new Intent(OffersActivity.this, DetailActivity.class);
-                        intent.putExtra("user_row_item",offer);
-                        startActivity(intent);
-                        finish();
-
-                });
+        List<Offer> mFilteredList = new ArrayList<>();
+        for (Offer offer:offerList){
+            if (offer.getTitle().toLowerCase().contains(s.toLowerCase()) || offer.getLiterature().toLowerCase().contains(s.toLowerCase())){
+                mFilteredList.add(offer);
             }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.wtf("OfferActivity", error.getMessage());
-            }
+        }
+        offerAdapter.filteredList(mFilteredList);
+        offerAdapter.setOnItemClickListener(position -> {
+            Intent intent = new Intent(OffersActivity.this,DetailActivity.class);
+            intent.putExtra("offer",offerList.get(position));
+            startActivity(intent);
         });
     }
 

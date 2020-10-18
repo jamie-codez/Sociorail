@@ -25,7 +25,7 @@
         android:id="@+id/adView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        ads:adUnitId="@string/banner_ad_unit_id"
+        ads:adUnitId="@string/request_ad_unit_id"
         ads:adSize="BANNER"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

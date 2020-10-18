@@ -181,7 +181,7 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
         Name = nameET.getText().toString().trim();
         Sex = genderSpinner.getSelectedItem().toString();
         if (selectedPhotoUri == null) return;
-        UUID filename = UUID.randomUUID();
+        String filename = FirebaseAuth.getInstance().getUid();
         final StorageReference storage = FirebaseStorage.getInstance().getReference("image/" + filename);
         storage.putFile(selectedPhotoUri).addOnCompleteListener(task -> {
             Log.i("Sign up", "Successfully uploaded image to database");
@@ -203,6 +203,7 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             pd.dismiss();
+            finish();
         });
     }
 

@@ -72,9 +72,9 @@ public class UsersActivity extends AppCompatActivity implements SearchView.OnQue
                         UserRowItem _user = new UserRowItem(user.getName(), user.getUid(), user.getImageUrl(), user.getName().toLowerCase());
                         mRef.child(user.getUid()).setValue(_user)
                                 .addOnSuccessListener(aVoid -> {
+                                    getUsers();
                                     Toast.makeText(UsersActivity.this, "Successfully added your name to the list", Toast.LENGTH_SHORT).show();
                                     checkStatus();
-                                    getUsers();
                                     removeName.setVisibility(View.VISIBLE);
                                     joinListTV.setText("Leave list");
                                     addName.setVisibility(View.GONE);
@@ -115,11 +115,11 @@ public class UsersActivity extends AppCompatActivity implements SearchView.OnQue
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("customer_list").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
         reference.setValue(null)
                 .addOnSuccessListener(aVoid -> {
+                    getUsers();
                     Toast.makeText(UsersActivity.this, "Successfully removed your name from the list", Toast.LENGTH_SHORT).show();
                     removeName.setVisibility(View.INVISIBLE);
                     joinListTV.setText("Join list");
                     addName.setVisibility(View.VISIBLE);
-                    getUsers();
                 });
     }
 

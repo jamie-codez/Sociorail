@@ -70,7 +70,7 @@ public class PairActivity extends AppCompatActivity {
         requestSentTV.setVisibility(View.VISIBLE);
         buffer.setVisibility(View.VISIBLE);
         sendRequest.setVisibility(View.INVISIBLE);
-        jigsaw.setVisibility(View.GONE);
+        jigsaw.setVisibility(View.INVISIBLE);
         partnerName = user.getUserName();
         partnerUid = user.getUid();
         readName();

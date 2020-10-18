@@ -53,19 +53,18 @@ public class DetailActivity extends AppCompatActivity {
         getData();
         getLocation();
         enter.setOnClickListener(view -> {
-            DecimalFormat round = new DecimalFormat("#.####");
+            DecimalFormat round = new DecimalFormat("#.###");
             round.setRoundingMode(RoundingMode.CEILING);
             Lat = round.format(latitude);
             Long = round.format(longitude);
-            Intent intent = new Intent(DetailActivity.this, UsersActivity.class);
-            startActivity(intent);
-//            if (offer.getLatitude().equals(Lat) && offer.getLongitude().equals(Long)) {
-//                Intent intent = new Intent(DetailActivity.this, UsersActivity.class);
-//                startActivity(intent);
-//            }else {
-//                error.setVisibility(View.VISIBLE);
-//                enter.setActivated(false);
-//            }
+            if (offer.getLatitude().equals(Lat) && offer.getLongitude().equals(Long)) {
+                Intent intent = new Intent(DetailActivity.this, UsersActivity.class);
+                startActivity(intent);
+                finish();
+            }else {
+                error.setVisibility(View.VISIBLE);
+                enter.setActivated(false);
+            }
         });
     }
 
@@ -95,7 +94,7 @@ public class DetailActivity extends AppCompatActivity {
             prices.setText(offer.getLocation());
             locality.setText(String.format("Locality:\n%s", offer.getLocation()));
             establishment.setText(String.format("Est: %s", offer.getEstablishment()));
-            Picasso.get().load(offer.getFileSource()).resize(200, 220).into(offerImage);
+            Picasso.get().load(offer.getFileSource()).resize(200, 220).placeholder(R.drawable.image).into(offerImage);
         }
         intent.removeExtra("offer");
     }

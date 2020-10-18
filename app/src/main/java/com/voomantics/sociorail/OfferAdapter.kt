@@ -1,8 +1,7 @@
 package com.voomantics.sociorail
 
 import android.content.Context
-import android.graphics.BitmapFactory
-import android.util.Base64
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 
 
-class OfferAdapter(val context: Context, private val offerList: List<Offer>, private var listener: OnItemClick?) : RecyclerView.Adapter<OfferAdapter.OfferViewHolder>() {
+class OfferAdapter(val context: Context, private var offerList: List<Offer>, private var listener: OnItemClick?) : RecyclerView.Adapter<OfferAdapter.OfferViewHolder>() {
 
     interface OnItemClick {
         fun onItemClick(position: Int)
@@ -39,22 +38,8 @@ class OfferAdapter(val context: Context, private val offerList: List<Offer>, pri
             location.text = offer.location
             establishment.text = String.format("Est: %s", offer.establishment)
             locality.text = String.format("Locality: \n %s", offer.location)
-            val decodedString: ByteArray = Base64.decode(offer.fileSource, Base64.DEFAULT)
-            val bitMap = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.size)
-            try {
-                image.setImageBitmap(bitMap)
-
-            }catch (e:Exception){
-                e.printStackTrace()
-                image.setImageResource(R.drawable.error)
-            }
-//            Picasso.get()
-//                    .load(offer.fileSource)
-//                    .placeholder(R.drawable.image)   // optional
-//                    .error(R.drawable.error)      // optional
-//                    .resize(300, 200)// optional
-//                    .centerInside()
-//                    .into(image)
+            Log.e("offerAdapter","imageurl" +offer.fileSource)
+            Picasso.get().load(offer.fileSource).placeholder(R.drawable.image).resize(300,200).centerInside().into(image)
         }
 
         init {
@@ -79,4 +64,9 @@ class OfferAdapter(val context: Context, private val offerList: List<Offer>, pri
     }
 
     override fun getItemCount() = offerList.size
+
+    fun filteredList(filteredList:List<Offer>){
+        offerList = filteredList
+        notifyDataSetChanged()
+    }
 }
